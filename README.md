@@ -28,36 +28,47 @@ const image = "https://cdn.onebauer.media/one/media/5c6e/80bc/d007/9656/5f0a/6c1
 //for face detection on image
 towise.faceDetect(image)
 .then(data => console.log(data))
+
 //for body detection on image
 towise.bodyDetect(image)
 .then(data => console.log(data))
+
 //for emotion detection on image
 towise.emotionDetect(image)
 .then(data => console.log(data))
+
 //for face comparing with typed image on system
 towise.faceComparing(image)
 .then(data => console.log(data))
+
 //for get all person on system
 towise.getAllPerson()
 .then(data => console.log(data));
+
 //for get person by id
 towise.getPerson("person id")
 .then(data => console.log(data));
+
 //for add person by name
 towise.addPerson("person name")
 .then(data => console.log(data));
+
 //for remove person from system
 towise.removePerson("person id")
 .then(data => console.log(data));
+
 //for get all faces by person id
 towise.getAllFace("person id")
 .then(data => console.log(data));
+
 //for get image by face id
 towise.getFace("face id")
 .then(data => console.log(data))
+
 // for add face to pereson by person id
 towise.addFace(image,"person id","yes")
 .then(data => console.log(data));
+
 //remove image of person by id
 towise.removeFace("faceId")
 .then(data => console.log(data));
