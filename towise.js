@@ -96,4 +96,3 @@ Towise.prototype.removeFace= function(faceId){
     return this.createRequest(this.config.baseUrl + this.config.faces,'DELETE',data);
 }
 
-
