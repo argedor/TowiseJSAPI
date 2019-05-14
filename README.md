@@ -12,7 +12,7 @@ bower install towise
 ```
 or you can download towise.js file and add to your index.html file
 
-```sh
+```html
 <script src="/public/js/towise.js" type="text/javascript"></script>
 ```
 ### Using Towise
@@ -23,22 +23,44 @@ For Example:
 
 const towise = new Towise("type your appId","type your appkey");
 
-const image_url = "https://cdn.onebauer.media/one/media/5c6e/80bc/d007/9656/5f0a/6c12/dua-lipa-brits.jpg";
+const image = "https://cdn.onebauer.media/one/media/5c6e/80bc/d007/9656/5f0a/6c12/dua-lipa-brits.jpg";
 
-//for face detection
-towise.faceDetect(image_url)
-        .then( res => console.log(res))
-        .catch( err => console.error(err));
-
-//for body detection
-towise.bodyDetect(image_url)
-        .then( res => console.log(res))
-        .catch( err => console.error(err));
-
-//for emotion detection
-towise.emotionDetect(image_url)
-        .then( res => console.log(res))
-        .catch( err => console.error(err));
+//for face detection on image
+towise.faceDetect(image)
+.then(data => console.log(data))
+//for body detection on image
+towise.bodyDetect(image)
+.then(data => console.log(data))
+//for emotion detection on image
+towise.emotionDetect(image)
+.then(data => console.log(data))
+//for face comparing with typed image on system
+towise.faceComparing(image)
+.then(data => console.log(data))
+//for get all person on system
+towise.getAllPerson()
+.then(data => console.log(data));
+//for get person by id
+towise.getPerson("person id")
+.then(data => console.log(data));
+//for add person by name
+towise.addPerson("person name")
+.then(data => console.log(data));
+//for remove person from system
+towise.removePerson("person id")
+.then(data => console.log(data));
+//for get all faces by person id
+towise.getAllFace("person id")
+.then(data => console.log(data));
+//for get image by face id
+towise.getFace("face id")
+.then(data => console.log(data))
+// for add face to pereson by person id
+towise.addFace(image,"person id","yes")
+.then(data => console.log(data));
+//remove image of person by id
+towise.removeFace("faceId")
+.then(data => console.log(data));
 ```
 
 ## Versioning
